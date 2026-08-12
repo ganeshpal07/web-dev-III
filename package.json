@@ -17,5 +17,15 @@
   "dependencies": {
     "chalk": "^6.0.0",
     "dotenv": "^17.4.2"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ganeshpal07/web-dev-III.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/ganeshpal07/web-dev-III/issues"
+  },
+  "homepage": "https://github.com/ganeshpal07/web-dev-III#readme"
 }
