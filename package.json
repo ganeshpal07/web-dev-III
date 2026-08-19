@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "unit-2-web-dev",
   "version": "1.0.0",
   "description": "",
@@ -15,4 +16,35 @@
     "express": "^5.2.1",
     "nodemon": "^3.1.14"
   }
+=======
+  "name": "first-class",
+  "version": "1.0.0",
+  "description": "intro",
+  "license": "ISC",
+  "author": "Ganesh pal",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "dev": "node app.js",
+    "lecture3": "node app.js lecture3",
+    "lecture4": "node app.js lecture4",
+    "lecture5": "node app.js lecture5",
+    "lecture6": "node app.js lecture6",
+    "lecture7": "node app.js"
+  },
+  "dependencies": {
+    "chalk": "^6.0.0",
+    "dotenv": "^17.4.2"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ganeshpal07/web-dev-III.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/ganeshpal07/web-dev-III/issues"
+  },
+  "homepage": "https://github.com/ganeshpal07/web-dev-III#readme"
+>>>>>>> 0e701ce4368e1e19718706b4c865bca31b17ddd9
 }
