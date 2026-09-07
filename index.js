@@ -1,30 +1,53 @@
-// after calling a function, it returns an object it is called factory function
-const express = require('express');
-const app = express();
+const express = require("express"); // Import Express
 
-const packages = require('./data/tour');
+const app = express(); // Create Express application
 
-app.get('/', (req, res) => {
-    res.send('Hello World');
+
+const packages = require("./data/tour.json"); // Import packages data
+
+// client --> request --> middleware1 --> middleware2 --> middleware3 --> response
+
+// const middleware1 = (req,res,next)=> {
+//     console.log("Middleware 1");
+//     next();
+// }
+
+// const loggger = (req,res,next)=> {
+//     console.log(`${req.method} ${req.url}`);
+//     next();
+// }
+
+// app.use(loggger);
+
+const CheckAge = (req,res,next)=> {
+    const age = req.query.age;
+    if(age < 18){
+        return res.status(403).json("You are not allowed to access this resource");
+    }
+    next();
+}
+
+app.use(CheckAge); // Use CheckAge middleware for all routes
+app.get("/",(req,res)=>{
+    res.send("Hello World");
+});
+// const tourRoutes = require("./router/tourRoutes"); // Import tour routes
+// app.use("/api/tours", tourRoutes); // Use tour routes for /api/tours endpoint
+
+app.get("/", (req, res) => { // Handle GET request to /
+    res.send("Hello World"); // Send response
 });
 
-
-app.get('/packages', (req, res) => {
+app.get("/packages",(req,res)=>{
     res.json(packages);
 });
 
-// use http://localhost:3000/packages in postman to get all the packages --------------------------------
-
-app.get('/packages/:id', (req, res) => {
+app.get("/packages/:id",(req,res)=>{
     const packageId = parseInt(req.params.id);
-    const selectedPackage = packages.find(pkg => pkg.id === packageId); // comparing what id we put in postman with the id in the packages array, if true then it will return the package with that id
+    const selectedPackage = packages.find(item => item.id === packageId);
     res.json(selectedPackage);
 });
-// use http://localhost:3000/packages/1 in postman to get the package with id 1 here
-// --------------------------------
 
-const PORT = process.env.PORT || 3000;
-
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+app.listen(3000, () => { // Start server on port 3000
+    console.log("Server is running on port 3000"); // Show confirmation
 });
