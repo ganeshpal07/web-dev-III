@@ -3,29 +3,18 @@
   "version": "1.0.0",
   "description": "intro",
   "license": "ISC",
-  "author": "Ganesh pal",
+  "author": "yash",
   "type": "commonjs",
   "main": "app.js",
   "scripts": {
     "dev": "node app.js",
-    "lecture3": "node app.js lecture3",
-    "lecture4": "node app.js lecture4",
-    "lecture5": "node app.js lecture5",
-    "lecture6": "node app.js lecture6",
-    "lecture7": "node app.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "chalk": "^6.0.0",
-    "dotenv": "^17.4.2"
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "nodemon": "^3.1.14"
   },
-  "devDependencies": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ganeshpal07/web-dev-III.git"
-  },
-  "keywords": [],
-  "bugs": {
-    "url": "https://github.com/ganeshpal07/web-dev-III/issues"
-  },
-  "homepage": "https://github.com/ganeshpal07/web-dev-III#readme"
+  "keywords": []
 }
